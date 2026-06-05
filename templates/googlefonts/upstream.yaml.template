@@ -1,0 +1,9 @@
+# Template only. Do not submit with TODO values.
+
+branch: main
+files:
+  OFL.txt: OFL.txt
+  fonts/ttf/LunarBlob-Regular.ttf: LunarBlob-Regular.ttf
+  documentation/DESCRIPTION.en_us.html: DESCRIPTION.en_us.html
+repository_url: TODO_REPO_URL
+

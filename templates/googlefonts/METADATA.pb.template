@@ -1,0 +1,38 @@
+# Template only. Do not submit with TODO values.
+
+name: "Lunar Blob"
+designer: "TODO_DESIGNER_OR_FOUNDRY"
+license: "OFL"
+category: "DISPLAY"
+date_added: "2026-06-05"
+fonts {
+  name: "Lunar Blob"
+  style: "normal"
+  weight: 400
+  filename: "LunarBlob-Regular.ttf"
+  post_script_name: "LunarBlob-Regular"
+  full_name: "Lunar Blob Regular"
+  copyright: "Copyright 2026 The Lunar Blob Project Authors (TODO_REPO_URL)"
+}
+subsets: "latin"
+subsets: "latin-ext"
+subsets: "menu"
+source {
+  repository_url: "TODO_REPO_URL"
+  branch: "main"
+  files {
+    source_file: "OFL.txt"
+    dest_file: "OFL.txt"
+  }
+  files {
+    source_file: "fonts/ttf/LunarBlob-Regular.ttf"
+    dest_file: "LunarBlob-Regular.ttf"
+  }
+  files {
+    source_file: "documentation/DESCRIPTION.en_us.html"
+    dest_file: "DESCRIPTION.en_us.html"
+  }
+}
+stroke: "SANS_SERIF"
+classifications: "DISPLAY"
+

@@ -1,0 +1,6 @@
+fonttools
+gftools
+fontbakery
+glyphsets
+shaperglot
+
