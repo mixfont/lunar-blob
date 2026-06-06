@@ -1,9 +1,8 @@
-# Template only. Do not submit with TODO values.
-
 branch: main
 files:
   OFL.txt: OFL.txt
   fonts/ttf/LunarBlob-Regular.ttf: LunarBlob-Regular.ttf
   documentation/DESCRIPTION.en_us.html: DESCRIPTION.en_us.html
-repository_url: TODO_REPO_URL
-
+  documentation/article/ARTICLE.en_us.html: article/ARTICLE.en_us.html
+  documentation/lunar-blob-specimen.png: article/lunar-blob-specimen.png
+repository_url: https://github.com/mixfont/lunar-blob

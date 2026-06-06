@@ -1,4 +1,4 @@
-Lunar Blob Project Authors
+Lunar Blob Contributors
 
 Mixfont (https://github.com/mixfont)
-Eric Lu
+

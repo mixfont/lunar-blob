@@ -24,7 +24,7 @@ STYLE_NAME = "Regular"
 FULL_NAME = "Lunar Blob Regular"
 POSTSCRIPT_NAME = "LunarBlob-Regular"
 VERSION = "Version 1.000"
-REPO_URL = os.environ.get("LUNAR_BLOB_REPO_URL", "TODO_REPO_URL")
+REPO_URL = os.environ.get("LUNAR_BLOB_REPO_URL", "https://github.com/mixfont/lunar-blob")
 COPYRIGHT = f"Copyright 2026 The Lunar Blob Project Authors ({REPO_URL})"
 LICENSE = (
     "This Font Software is licensed under the SIL Open Font License, Version 1.1. "

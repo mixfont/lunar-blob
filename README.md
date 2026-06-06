@@ -2,34 +2,33 @@
 
 # Lunar Blob
 
-Lunar Blob is a draft Google Fonts candidate repository.
+Lunar Blob is a rounded display sans-serif with dense, bubbly letterforms and a
+playful grotesque structure. It is built for expressive headlines, posters,
+game UI, packaging, and brand work.
 
 ![Lunar Blob specimen](documentation/lunar-blob-specimen.png)
 
-Current status:
+## Status
 
-- Renamed binary: `fonts/ttf/LunarBlob-Regular.ttf`
-- GF Latin Core coverage: complete in the current binary
-- Google Fonts QA status: 0 FAIL / 12 WARN after `scripts/repair_current_ttf.py`
-- Google Fonts submission status: blocked until final authorship metadata, public repo URL, OFL files, and source files are resolved
+- License: SIL Open Font License 1.1
+- Current style: Regular 400
+- Font file: `fonts/ttf/LunarBlob-Regular.ttf`
+- Coverage: GF Latin Core
+- Google Fonts QA: 0 FAIL / 12 WARN
+- Upstream: https://github.com/mixfont/lunar-blob
 
-## Required Before Submission
+## Files
 
-Google Fonts requires the project to be wholly licensed under the SIL Open Font License v1.1, with no Reserved Font Names unless pre-approved. The repaired binary currently uses `TODO_REPO_URL` in the copyright string; replace that with the final public repository URL before submission.
+- `fonts/ttf/`: release TTF files
+- `documentation/`: description, article, and specimen assets
+- `sources/`: editable source files and build scripts
+- `templates/googlefonts/`: draft package files for `google/fonts`
+- `scripts/qa.sh`: Google Fonts QA helper
+- `scripts/repair_current_ttf.py`: temporary binary repair script until source-based builds are in place
 
-Add the real design sources to `sources/` in a supported format such as `.glyphspackage`, `.glyphs`, or UFO, plus a one-command build through `sources/config.yaml` or `sources/build.sh`.
+## Development
 
-After source and licensing are resolved, replace the templates in `templates/googlefonts/` with real files:
-
-- `AUTHORS.txt`
-- `CONTRIBUTORS.txt`
-- `OFL.txt`
-- `METADATA.pb`
-- `upstream.yaml`
-
-## QA
-
-Install the development tools in a virtual environment:
+Install the QA tools:
 
 ```sh
 python3 -m venv .venv
@@ -37,11 +36,21 @@ python3 -m venv .venv
 pip install -r requirements-dev.txt
 ```
 
-Run the current QA helper:
+Regenerate the current repaired TTF metadata and run QA:
 
 ```sh
-LUNAR_BLOB_REPO_URL=https://github.com/YOUR_ACCOUNT/lunar-blob scripts/repair_current_ttf.py
+scripts/repair_current_ttf.py
 scripts/qa.sh
 ```
 
-See `docs/google-fonts-submission.md` for the active blocker list and next steps.
+## Google Fonts
+
+This repo has the public upstream URL, OFL license, authorship files,
+documentation, and repaired TTF needed for Google Fonts review. The remaining
+submission blocker is source compliance: Google Fonts expects editable sources
+in `sources/` and a one-command open-source build that reproduces the TTF.
+
+The final Google Fonts package should be prepared under `ofl/lunarblob/` in a
+fork of `google/fonts`. See `docs/google-fonts-submission.md` for the full
+checklist.
+

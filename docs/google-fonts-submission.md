@@ -41,7 +41,7 @@ Current known facts:
 - The repaired font has an OFL license string and URL in name IDs 13 and 14.
 - The repaired font has `OS/2.fsType` set to `0`, which is required for Google Fonts.
 - The repaired font has `kern`, `mark`, and `mkmk` GPOS features.
-- The repaired font currently has `TODO_REPO_URL` in name ID 0; replace this with the final public repository URL before submission.
+- The repaired font uses `https://github.com/mixfont/lunar-blob` in its copyright metadata.
 
 ## Google Fonts QA Failures
 
@@ -69,7 +69,7 @@ rename.
 Current repaired command:
 
 ```sh
-LUNAR_BLOB_REPO_URL=https://github.com/YOUR_ACCOUNT/lunar-blob scripts/repair_current_ttf.py
+scripts/repair_current_ttf.py
 PATH=/tmp/lunar-blob-fontenv/bin:$PATH scripts/qa.sh
 ```
 
@@ -77,7 +77,7 @@ Current repaired summary:
 
 - 0 FAIL
 - 12 WARN
-- 102 PASS
+- 105 PASS
 
 Failures fixed by `scripts/repair_current_ttf.py`:
 
@@ -110,22 +110,25 @@ Remaining warnings to review:
 
 Submission blockers still open:
 
-- Replace `TODO_REPO_URL` in `scripts/repair_current_ttf.py`, `OFL.txt`, `METADATA.pb`, and `upstream.yaml`.
-- Add final `AUTHORS.txt` and `CONTRIBUTORS.txt`.
 - Add real editable source files in `sources/`.
 - Add a one-command source build, preferably `sources/config.yaml` for `gftools builder`.
-- Replace templates in `templates/googlefonts/` with final files.
+- Copy the package draft from `templates/googlefonts/` into a fork of `google/fonts` under `ofl/lunarblob`.
 - Unknown vendor ID `????`.
 
 ## Submission Plan
 
-1. Finalize licensing and authorship metadata.
+1. Finalize source compliance.
 
-   The project owner has confirmed rights to publish. Add the exact public repository URL, copyright holder list, designer/foundry name, and OFL files. Keep the OFL free of Reserved Font Names unless Google pre-approves an exception.
+   Add editable design sources under `sources/` and a one-command open-source build. Google Fonts expects sources in `.glyphspackage`, `.glyphs`, UFO, or another editor format with conversion to UFO. The current repo has a repaired binary and helper script, but not full editable source compliance yet.
 
-2. Add source files.
+2. Keep metadata aligned.
 
-   Put real source files in `sources/` and add a one-command build. If there are no editable source files, recreate the font in a source format before submitting.
+   Google Fonts requires the canonical project-author copyright form. Root
+   `OFL.txt`, `METADATA.pb`, and the font name-table copyright all use:
+
+   `Copyright 2026 The Lunar Blob Project Authors (https://github.com/mixfont/lunar-blob)`
+
+   `AUTHORS.txt` lists Mixfont and Eric Lu.
 
 3. Port binary metadata fixes into source.
 
@@ -135,7 +138,7 @@ Submission blockers still open:
    - Full name: `Lunar Blob Regular`
    - PostScript name: `LunarBlob-Regular`
    - Version: `Version 1.000` or higher
-   - Copyright: `Copyright 2026 The Lunar Blob Project Authors (REPO_URL)`
+   - Copyright: `Copyright 2026 The Lunar Blob Project Authors (https://github.com/mixfont/lunar-blob)`
    - License: standard Google Fonts OFL string
    - License URL: `https://openfontlicense.org`
    - `OS/2.fsType`: `0`
@@ -161,9 +164,10 @@ Submission blockers still open:
      OFL.txt
      METADATA.pb
      DESCRIPTION.en_us.html or article/ARTICLE.en_us.html
+     article/lunar-blob-specimen.png
    ```
 
-   Use `gftools add-font ofl/lunarblob`, then inspect and correct `METADATA.pb`.
+   Use `gftools add-font ofl/lunarblob`, then inspect and correct `METADATA.pb`. The package draft in `templates/googlefonts/` already has the public upstream URL and source file mappings.
 
 7. Open the PR.
 
